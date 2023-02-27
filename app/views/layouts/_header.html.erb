@@ -18,10 +18,16 @@
           <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
         </form>
 
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
-        </div>
+        <% if customer_signed_in? %>
+          <div class="text-end">
+            <a type="button" href="<%=edit_customer_registration_path%>" class="btn btn-outline-light me-2">Account</a>
+          </div>
+        <% else %>
+          <div class="text-end">
+            <a type="button" href="<%=new_customer_session_path%>" class="btn btn-outline-light me-2">Login</a>
+            <a href="<%=new_customer_registration_path%>" type="button" class="btn btn-warning">Sign up</a>
+          </div>
+        <% end %>
       </div>
     </div>
   </header>
