@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :customers
+  devise_for :admins, skip: [:registrations], controllers: {
+    sessions: "admins/sessions"
+  }
+  devise_for :customers, controllers: {
+    sessions: "customers/sessions",
+    registrations: "customers/registrations"
+  }
   root 'static_pages#home'
   get 'static_pages/home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
