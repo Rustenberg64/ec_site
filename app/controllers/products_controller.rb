@@ -1,14 +1,12 @@
 class ProductsController < ApplicationController
 
   def index
-    @pagy, @produts = Product.all
+    @pagy, @products = pagy(Product.all)
   end
 
   def create
     @product = Product.new(product_params)
-    if @product.save
-    else
-    end
+    @product.save
   end
 
   def new
@@ -38,6 +36,6 @@ class ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:name, :manufacturer, :price,
-                                  :description, :stock)
+                                  :description, :stock, :image)
     end
 end
