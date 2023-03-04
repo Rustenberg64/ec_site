@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="d-flex flex-wrap">
+    <%= image_tag @product.image, class: "img-fluid flex-fill me-5 mb-2", size: '100x100' %>
+
+    <div class="flex-fill">
+      <h1><%= @product.manufacturer%> <%= @product.name%></h1>
+      <h2>¥ <%= @product.price%></h2>
+      <h4 class="mb-3"><%= @product.stock%></h4>
+
+      <div class="d-grid mb-5">
+        <button class="btn btn-primary" type="button">Button</button>
+      </div>
+      <p class="text-break"><%= @product.description %></p>
+    </div>
+  </div>
+</div>

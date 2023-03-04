@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
 
-  resources :products
+  namespace :admin do
+    resources :products
+  end
+
+  scope module: :customer do
+    resources :products, only: [:index, :show]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

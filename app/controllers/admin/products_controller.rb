@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
 
   def index
     @pagy, @products = pagy(Product.all)

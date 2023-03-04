@@ -1,0 +1,38 @@
+
+<%== pagy_bootstrap_nav(@pagy) %>
+
+
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Manufacturer</th>
+      <th scope="col">Price</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Created_at</th>
+      <th scope="col">Updated_at</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <th scope="row"><%= image_tag product.image, class: "img-fluid", size: '200x200' %></th>
+        <td><%= product.name %></td>
+        <td><%= product.manufacturer %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
+        <td><%= l product.created_at %></td>
+        <td><%= l product.updated_at %></td>
+        <td><%= link_to "Edit", edit_admin_product_path(product) %></td>
+      </tr>
+    <% end%>
+  </tbody>
+</table>
+
+  <div class="d-flex justify-content-center">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>
