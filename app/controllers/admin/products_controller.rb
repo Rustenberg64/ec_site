@@ -30,6 +30,7 @@ class Admin::ProductsController < ApplicationController
 
   def destroy
     Product.find(params[:id]).destroy
+    # @product.destroy
   end
 
   private

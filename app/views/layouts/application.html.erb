@@ -12,9 +12,22 @@
 
   <body>
     <%= render "layouts/header" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <main class="mt-5 mb-5">
+        <div class="d-flex flex-column align-items-center">
+        <% if flash[:notice] %>
+        <div class="alert alert-primary text-center col-5" role="alert">
+          <%= notice %>
+        </div>
+        <% end %>
+        <% if flash[:alert] %>
+        <div class="alert alert-danger text-center col-5" role="alert">
+          <%= alert %>
+        </div>
+        <% end %>
+        </div>
+
+        <%= yield %>
+      </main>
     <%= render "layouts/footer" %>
     <%= debug(params) if Rails.env.development? %>
   </body>

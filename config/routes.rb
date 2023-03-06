@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   scope module: :customer do
     resources :products, only: [:index, :show]
+    resources :cart_items, only: [:index, :update, :destroy, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

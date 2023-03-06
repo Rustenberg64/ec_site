@@ -14,9 +14,25 @@
         (<%= @product.stock%>)
       </h4>
 
+      <%= form_with model: @cart_item, url: cart_items_path, class: "col-lg-6" do |f|%>
+
+        <%= f.hidden_field :product_id, value: @product.id%>
+
+        <div class="mb-3 col-3">
+          <%= f.label :quantity, class: "form-label" %>
+          <%= f.number_field :quantity, min:1, class: "form-control"%>
+        </div>
+
       <div class="d-grid mb-5">
-        <button class="btn btn-primary" type="button">Button</button>
+        <% if @product.stock == 0%>
+          <%= f.submit "Add Cart", class: "btn btn-secondary disabled"  %>
+        <% else %>
+          <%= f.submit "Add Cart", class: "btn btn-primary"  %>
+        <% end %>
       </div>
+
+      <% end %>
+
       <p class="text-break"><%= @product.description %></p>
     </div>
   </div>

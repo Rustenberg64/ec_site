@@ -6,6 +6,8 @@ class Customer::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @cart_item = @product.cart_items.build
+    @cart_item.quantity = 1
   end
 
 end
