@@ -1,44 +1,67 @@
-
 <div class="container">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">Manufacturer</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @cart_items.each do |cart_item| %>
-      <tr>
-        <th scope="row"><%= image_tag cart_item.product.image, class: "img-fluid", size: '200x200' %></th>
-        <td><%= cart_item.product.name %></td>
-        <td><%= cart_item.product.manufacturer %></td>
-        <td><%= cart_item.product.price %></td>
-        <td>
-        <%= form_with model: cart_item, url: cart_item_path(cart_item), class: "col-lg-6" do |f|%>
+  <div class="row">
+    <div class="col-md-7 col-md-8">
+      <% @cart_items.each do |cart_item| %>
+        <div class="row border-top border-2 p-4">
+          <div class="col-md-2 col-2">
+            <%= link_to image_tag(cart_item.product.image, class: "img-fluid"), product_path(cart_item.product) %>
+          </div>
+          <div class="col">
+            <div class="row">
+            
+              <div class="col-4">
+                <div><%= cart_item.product.name %></div>
+                <div><%= cart_item.product.manufacturer %></div>
+                <div>¥ <%= cart_item.product.price %></div>
+              </div>
 
-        <%= f.hidden_field :product_id, value: cart_item.product.id%>
+              <div class="col-4 ms-auto">
+                <%= form_with model: cart_item, url: cart_item_path(cart_item), class: "" do |f|%>
+                <%= f.hidden_field :product_id, value: cart_item.product_id%>
+                  <%# f.label :quantity, class: "col-form-label" %>
+                  <%= f.number_field :quantity, min:1, class: "form-control"%>
+                  <%= f.submit "Change", class: "btn btn-outline-primary"  %>
+                <% end %>
+              </div>
+              <div class="col-4 ms-auto">
+                <%= link_to "delete", cart_item_path(cart_item), data: { "turbo-method": :delete}, class: "btn btn-danger" %>
+              </div>
 
-        <div class="mb-3 col-4">
-          <%= f.label :quantity, class: "form-label" %>
-          <%= f.number_field :quantity, min:1, class: "form-control"%>
+            </div>
+          </div>
         </div>
-
-       <div class="d-grid mb-5">
-        <%= f.submit "Change Quantity", class: "btn btn-primary"  %>
-      </div>
-
       <% end %>
-        </td>
-        <td><%= link_to "delete", cart_item_path(cart_item), data: { "turbo-method": :delete} %></td>
-      </tr>
-    <% end%>
-  </tbody>
-</table>
+    </div>
+
+    <div class="col-md-5 col-lg-4">
+      <div class="">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your cart</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Subtotal</h6>
+              <small class="text-muted"></small>
+            </div>
+            <span class="text-muted">¥<%=@total%></span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Shipping fee</h6>
+              <small class="text-muted">Calculated at check out</small>
+            </div>
+            <span class="text-muted"></span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total</span>
+            <strong>¥<%=@total%></strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
 
   </div>
 </div>

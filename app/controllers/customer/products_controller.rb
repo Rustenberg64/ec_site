@@ -1,7 +1,7 @@
 class Customer::ProductsController < ApplicationController
 
   def index
-    @pagy, @products = pagy(Product.all, items: 2)
+    @pagy, @products = pagy(Product.with_attached_image, items: 2)
   end
 
   def show
