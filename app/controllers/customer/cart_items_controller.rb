@@ -4,6 +4,7 @@ class Customer::CartItemsController < ApplicationController
   def index
     @cart_items = current_customer.cart_items.eager_load(product: {image_attachment: :blob})
     @total = @cart_items.sum("quantity * price")
+    @total_quantity = @cart_items.sum(:quantity)
   end
 
   def update
@@ -13,8 +14,11 @@ class Customer::CartItemsController < ApplicationController
   end
 
   def destroy
-    current_customer.cart_items.find(params[:id]).destroy
-    redirect_to cart_items_path, status: :see_other, notice: "A cart item was deleted"
+    if current_customer.cart_items.find(params[:id]).destroy
+      redirect_to cart_items_path, status: :see_other, notice: "A cart item was deleted"
+    else
+      render "index", status: :unprocessable_entity
+    end
   end
 
   def create
@@ -23,8 +27,11 @@ class Customer::CartItemsController < ApplicationController
       @cart_item.increment!(:quantity, params[:cart_item][:quantity].to_i)
       redirect_to cart_items_path, notice: "Quantity was changed"
     else
-      current_customer.cart_items.create(cart_item_params)
-      redirect_to cart_items_path, notice: "Add a item to cart"
+      if current_customer.cart_items.create(cart_item_params)
+        redirect_to cart_items_path, notice: "Add a item to cart"
+      else
+        render "index", status: :unprocessable_entity, alert: "Failed to add a item to card"
+      end
     end
   end
 
