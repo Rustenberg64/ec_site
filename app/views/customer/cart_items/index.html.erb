@@ -1,44 +1,45 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-7 col-md-8">
-      <h2 class="mb-3">Shopping cart</h2>
+    <div class="col-md">
+      <h2 class="mb-3 border-bottom border-2 p-2">Shopping cart</h2>
       <% if @total_quantity == 0 %>
       <h4>No item<h4>
       <% else %>
       <% @cart_items.each do |cart_item| %>
-        <div class="row border-top border-2 p-4">
-          <div class="col-md-2 col-2">
+        <div class="d-flex border-bottom border-2 p-4">
+          <div class="col-md-2 col-2 me-3">
             <%= link_to image_tag(cart_item.product.image, class: "img-fluid"), product_path(cart_item.product) %>
           </div>
           <div class="col">
-            <div class="row">
+            <div class="d-flex">
             
-              <div class="col-4">
-                <div><%= cart_item.product.name %></div>
-                <div><%= cart_item.product.manufacturer %></div>
-                <div>¥ <%= cart_item.product.price %></div>
+              <div class="col">
+                <h5><%= cart_item.product.name %></h5>
+                <div class="mb-2"><%= cart_item.product.manufacturer %></div>
+                <h4>¥<%= cart_item.product.price %></h4>
               </div>
 
-              <div class="col-4 ms-auto">
-                <%= form_with model: cart_item, url: cart_item_path(cart_item), class: "" do |f|%>
-                <%= f.hidden_field :product_id, value: cart_item.product_id%>
-                  <%# f.label :quantity, class: "col-form-label" %>
-                  <%= f.number_field :quantity, min:1, class: "form-control"%>
-                  <%= f.submit "Change", class: "btn btn-outline-primary"  %>
+              <div class="col">
+                <%= form_with model: cart_item, url: cart_item_path(cart_item) do |f|%>
+                <% f.hidden_field :product_id, value: cart_item.product_id%>
+                <div class="d-flex">
+                  <%= f.label :Qty, class: "col-form-label me-2" %>
+                  <%= f.number_field :quantity, min:1, class: "me-2 w-25"%>
+                  <%= f.submit "send", class: "btn btn-outline-primary"  %>
+                </div>
                 <% end %>
               </div>
-              <div class="col-4 ms-auto">
-                <%= link_to "delete", cart_item_path(cart_item), data: { "turbo-method": :delete}, class: "btn btn-danger" %>
-              </div>
-
             </div>
           </div>
+            <div class="col-2 ms-auto align-self-end">
+              <%= link_to "del", cart_item_path(cart_item), data: { "turbo-method": :delete}, class: "btn btn-danger" %>
+            </div>
         </div>
       <% end %>
       <% end %>
     </div>
 
-    <div class="col-md-5 col-lg-4">
+    <div class=" col-lg-4 p-3">
       <div class="">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-primary">Total</span>
