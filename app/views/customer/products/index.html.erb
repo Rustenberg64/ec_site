@@ -1,5 +1,19 @@
 <div class="container">
 <h1 class="text-center"> Products </h1>
+<div class="d-flex justify-content-end mb-5">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Sort by
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><%= link_to "Price: low to high", products_path(sort: "price_low_to_high"), class: "dropdown-item"%></li>
+      <li><%= link_to "Price: high to low", products_path(sort: "price_high_to_low"), class: "dropdown-item"%></li>
+      <li><%= link_to "Date: old to new", products_path(sort: "date_old_to_new"), class: "dropdown-item"%></li>
+      <li><%= link_to "Date: new to old", products_path(sort: "date_new_to_old"), class: "dropdown-item"%></li>
+    </ul>
+  </div>
+</div>
+
 <div class="row row-cols-1 row-cols-md-4 row-cols-lg-6 g-4">
   <% @products.each do |product|%>
     <div class="col">
@@ -21,7 +35,7 @@
     </div>
   <% end %>
 </div>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center mt-4">
     <%== pagy_bootstrap_nav(@pagy) %>
   </div>
 </div>
