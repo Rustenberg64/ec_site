@@ -11,9 +11,9 @@
 
       <% @products.each_with_index do |product, i|%>
         <% if i==0%>
-          <div class="carousel-item active" data-bs-interval="5000">
+          <div class="carousel-item active" data-bs-interval="4000">
         <% else %>
-          <div class="carousel-item" data-bs-interval="5000">
+          <div class="carousel-item" data-bs-interval="4000">
         <% end %>
         <%= image_tag product.image,  class: "d-block w-100"%>
         <div class="carousel-caption d-none d-md-block">
