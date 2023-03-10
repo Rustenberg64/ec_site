@@ -10,6 +10,7 @@ gem "bootstrap", "~> 5.2.3"
 gem "sass-rails", "~> 6.0"
 gem "devise", "~> 4.9"
 gem "pagy", "~> 6.0.2"
+gem "faker", "~> 3.1.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
