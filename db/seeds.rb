@@ -118,16 +118,16 @@ product = Product.new(
 product.image.attach(io: File.open("./db/fixtures/bunbougu_anaake_punch.png"), filename: 'bunbougu_anaake_punch.png')
 product.save
 
-# 10
-product = Product.new(
-  name: "鉛筆",
-  manufacturer: Faker::Company.name,
-  price: 90,
-  description: "緑色の一般的な鉛筆",
-  stock: rand(50),
-)
-product.image.attach(io: File.open("./db/fixtures/bunbougu_enpitsu.png"), filename: 'bunbougu_enpitsu.png')
-product.save
+# # 10
+# product = Product.new(
+#   name: "鉛筆",
+#   manufacturer: Faker::Company.name,
+#   price: 90,
+#   description: "緑色の一般的な鉛筆",
+#   stock: rand(50),
+# )
+# product.image.attach(io: File.open("./db/fixtures/bunbougu_enpitsu.png"), filename: 'bunbougu_enpitsu.png')
+# product.save
 
 # 11
 product = Product.new(
@@ -180,6 +180,7 @@ product = Product.new(
   price: 370,
   description: "水色のラインが入ったスティックのり",
   stock: rand(50),
+  created_at: Time.now.prev_year
 )
 product.image.attach(io: File.open("./db/fixtures/bunbougu_sticknori.png"), filename: 'bunbougu_sticknori.png')
 product.save
@@ -191,6 +192,18 @@ product = Product.new(
   price: 580,
   description: "オレンジ色のカッター",
   stock: rand(50),
+  created_at: Time.now.next_year
 )
 product.image.attach(io: File.open("./db/fixtures/bunbougu_cutter.png"), filename: 'bunbougu_cutter.png')
+product.save
+
+# 10
+product = Product.new(
+  name: "鉛筆",
+  manufacturer: Faker::Company.name,
+  price: 90,
+  description: "緑色の一般的な鉛筆",
+  stock: rand(50),
+)
+product.image.attach(io: File.open("./db/fixtures/bunbougu_enpitsu.png"), filename: 'bunbougu_enpitsu.png')
 product.save
