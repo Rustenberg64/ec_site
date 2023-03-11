@@ -17,7 +17,10 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <th scope="row"><%= image_tag product.image, class: "img-fluid", size: '200x200' %></th>
+        <th scope="row">
+        <%= link_to image_tag( product.image, class: "user_image") , product_path(product), class: "ratio ratio-1x1"%>
+          <%# image_tag product.image, class: "img-fluid", size: '' %>
+        </th>
         <td><%= product.name %></td>
         <td><%= product.manufacturer %></td>
         <td><%= product.price %></td>

@@ -1,7 +1,8 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_admin!
 
   def index
-    @pagy, @products = pagy(Product.with_attached_image)
+    @pagy, @products = pagy(Product.with_attached_image, items: 10)
   end
 
   def create
