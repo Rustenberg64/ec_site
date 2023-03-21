@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @pagy, @products = pagy(Product.with_attached_image, items: 10)
+    @pagy, @products = pagy(Product.with_attached_image.order(created_at: :DESC), items: 10)
   end
 
   def create
