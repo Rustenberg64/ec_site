@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     registrations: "customers/registrations"
   }
   root 'static_pages#home'
-  get 'static_pages/home'
+  get 'about', to: "static_pages#about"
 
   namespace :admin do
     resources :products
