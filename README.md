@@ -1,4 +1,3 @@
-# README
 ## カート機能を実装したECサイト
 URL: https://ecsite1.onrender.com
 *Renderというサービスを使っていますが、アクセスがないとスリープしてしまうようで
