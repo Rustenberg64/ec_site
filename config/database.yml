@@ -23,6 +23,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  username: postgres
+  username: ec2_postgres
   encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
