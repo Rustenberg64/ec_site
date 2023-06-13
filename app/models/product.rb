@@ -9,4 +9,18 @@ class Product < ApplicationRecord
   end
   has_one_attached :image
   has_many :cart_items, dependent: :destroy
+
+  def self.get_all_and_sort(sort_param)
+    products = self.with_attached_image
+    case sort_param
+    when "price_low_to_high"
+      products.order(:price)
+    when "price_high_to_low"
+      products.order(price: :DESC)
+    when sort_param == "date_old_to_new"
+      products.order(:created_at)
+    else
+      products.order(created_at: :DESC)
+    end
+  end
 end
