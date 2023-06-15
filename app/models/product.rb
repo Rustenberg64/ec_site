@@ -17,7 +17,7 @@ class Product < ApplicationRecord
       products.order(:price)
     when "price_high_to_low"
       products.order(price: :DESC)
-    when sort_param == "date_old_to_new"
+    when "date_old_to_new"
       products.order(:created_at)
     else
       products.order(created_at: :DESC)

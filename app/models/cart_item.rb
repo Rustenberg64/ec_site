@@ -4,6 +4,7 @@ class CartItem < ApplicationRecord
     validates :product_id
     validates :quantity, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
   end
+  attribute :quantity, :integer, default: 1
   belongs_to :product
   belongs_to :customer
 end

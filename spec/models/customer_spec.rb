@@ -9,6 +9,34 @@ RSpec.describe Customer, type: :model do
     )
     expect(customer).to be_valid
   end
+
+  it "is invalid without an email" do
+    customer = Customer.new(
+      email: "",
+      password: "password"
+    )
+    customer.valid?
+    expect(customer.errors[:email]).not_to be_empty
+    # expect(customer).to be_invalid
+  end
+
+  it "is invalid with an email is not include @" do
+    customer = Customer.new(
+      email: "rhwfweofweo",
+      password: "password"
+    )
+    customer.valid?
+    expect(customer).to be_invalid
+  end
+
+  it "is invalid without a password" do
+    customer = Customer.new(
+      email: "abcd@example.com",
+      password: ""
+    )
+    expect(customer).to be_invalid
+  end
+
   # 名がなければ無効な状態であること
   it "is invalid without a first name"
   # 姓がなければ無効な状態であること
