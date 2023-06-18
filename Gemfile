@@ -61,6 +61,8 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'solargraph', require: false
+  gem "factory_bot_rails"
 end
 
 group :development do
