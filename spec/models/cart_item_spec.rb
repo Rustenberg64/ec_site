@@ -36,6 +36,14 @@ RSpec.describe CartItem, type: :model do
         product.destroy
         expect(CartItem.count).to eq 0
       end
+
+      it "is deleted when product is deleted" do
+        product = FactoryBot.create(:product)
+        customer = FactoryBot.create(:customer)
+        customer.cart_items.create(product_id: product.id)
+        product.destroy
+        expect(CartItem.count).to eq 0
+      end
     end
 
     context "about customer_id" do
@@ -49,6 +57,14 @@ RSpec.describe CartItem, type: :model do
         product = FactoryBot.create(:product)
         customer = FactoryBot.create(:customer)
         customer.cart_items.create(product_id: product.id)
+        customer.destroy
+        expect(CartItem.count).to eq 0
+      end
+
+      it "is deleted when product is deleted" do
+        product = FactoryBot.create(:product)
+        customer = FactoryBot.create(:customer)
+        product.cart_items.create(customer_id: customer.id)
         customer.destroy
         expect(CartItem.count).to eq 0
       end
