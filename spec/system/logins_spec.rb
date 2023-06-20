@@ -21,13 +21,13 @@ RSpec.describe "Logins", type: :system do
     fill_in "Password", with: customer.password
     click_button "Log in"
     expect(page.status_code).to eq 200
-    expect(page).to have_content "Log out"
-    expect(page).not_to have_content "Login"
-    expect(page).not_to have_content "Sign up"
+    expect(page).to have_link "Log out"
+    expect(page).not_to have_link "Login"
+    expect(page).not_to have_link "Sign up"
     click_link "Log out"
     expect(page.status_code).to eq 200
-    expect(page).to have_content "Login"
-    expect(page).to have_content "Sign up"
+    expect(page).to have_link "Login"
+    expect(page).to have_link "Sign up"
   end
 
   scenario "user sign up as a new customer" do
@@ -55,13 +55,13 @@ RSpec.describe "Logins", type: :system do
     fill_in "Password confirmation", with: customer.password
     click_button "Sign up"
     expect(page.status_code).to eq 200
-    expect(page).to have_content "Log out"
-    expect(page).not_to have_content "Login"
-    expect(page).not_to have_content "Sign up"
+    expect(page).to have_link "Log out"
+    expect(page).not_to have_link "Login"
+    expect(page).not_to have_link "Sign up"
     click_link "Log out"
     expect(page.status_code).to eq 200
-    expect(page).to have_content "Login"
-    expect(page).to have_content "Sign up"
+    expect(page).to have_link "Login"
+    expect(page).to have_link "Sign up"
   end
 
   scenario "user log in as a created admin" do
@@ -77,7 +77,6 @@ RSpec.describe "Logins", type: :system do
 
     fill_in "Email", with: admin.email
     fill_in "Password", with: admin.password
-    save_page
     click_button "Log in"
     expect(page.status_code).to eq 200
   end
