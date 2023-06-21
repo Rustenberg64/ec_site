@@ -5,6 +5,6 @@ FactoryBot.define do
     price { 123_456_789 }
     description { "this is sample" }
     stock { 10 }
-    image { Rack::Test::UploadedFile.new(Rails.root.join("/home/yasuda/enviroment/ec_site/spec/factories/images/sample.png"), 'image/png') }
+    image { Rack::Test::UploadedFile.new(Rails.root.join("#{Rails.root}/spec/factories/images/sample.png"), 'image/png') }
   end
 end
