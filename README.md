@@ -1,7 +1,5 @@
 ## カート機能を実装したECサイト
-URL: https://ecsite1.onrender.com
-*Renderというサービスを使っていますが、アクセスがないとスリープしてしまうようで
-復帰に長いと1分程度かかります。
+URL: http://alb-f24t34-1026615569.ap-northeast-3.elb.amazonaws.com
 
 ### 実装した機能
 - deviseを用いたユーザーの作成、ログイン、ログアウト
@@ -14,6 +12,8 @@ URL: https://ecsite1.onrender.com
   - 個別の商品ページからカートに商品を追加可能
   - カートページでの商品の数量変更、削除、合計金額の計算
 - 管理者ページでの商品の追加、削除、編集
+
+- rspecとcapybaraを用いたテスト
 
 
 ### こだわった点
