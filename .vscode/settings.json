@@ -1,0 +1,25 @@
+{
+  "auto-close-tag.SublimeText3Mode": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.colorTheme": "Material Theme",
+  "workbench.startupEditor": "none",
+  "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+      "erb": "html",
+      "ruby": "html"
+  },
+  "editor.autoClosingQuotes": "always",
+  "solargraph.useBundler": true,
+  "ruby.useBundler": true, //run non-lint commands with bundle exec
+  "ruby.useLanguageServer": true, // use the internal language server (see below)
+  "ruby.lint": {
+      "rubocop": {
+          "useBundler": true // enable rubocop via bundler
+      }
+  },
+  "ruby.format": "rubocop", // use rubocop for formatting
+  "window.zoomLevel": 1
+}
