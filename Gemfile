@@ -63,7 +63,7 @@ group :development, :test do
   gem 'rubocop-rspec', require: false
   gem 'rspec-rails', '~> 6.0.0', require: false
   gem 'solargraph', require: false
-  gem "factory_bot_rails", require: false
+  gem "factory_bot_rails"
 end
 
 group :development do
