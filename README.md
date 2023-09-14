@@ -1,5 +1,5 @@
 ## カート機能を実装したECサイト
-URL: http://alb-f24t34-1026615569.ap-northeast-3.elb.amazonaws.com
+URL: http://ecsit-publi-cxda4msa5le5-1632353347.ap-northeast-1.elb.amazonaws.com/
 
 ### 実装した機能
 - deviseを用いたユーザーの作成、ログイン、ログアウト
@@ -14,6 +14,7 @@ URL: http://alb-f24t34-1026615569.ap-northeast-3.elb.amazonaws.com
 - 管理者ページでの商品の追加、削除、編集
 
 - rspecとcapybaraを用いたテスト
+- GitHub Actionを用いたCI
 
 
 ### こだわった点
