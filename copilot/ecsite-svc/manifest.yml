@@ -15,7 +15,7 @@ http:
   # healthcheck: '/'
   healthcheck:
     path: '/'
-    interval: 15s
+    interval: 30s
     timeout: 10s
     grace_period: 180s
 
