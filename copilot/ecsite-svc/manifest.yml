@@ -39,7 +39,7 @@ network:
 #  LOG_LEVEL: info
 
 secrets:                      # Pass secrets from AWS Systems Manager (SSM) Parameter Store.
-  RAILS_MASTER_KEY: /copilot/${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/secrets/RAILS_MASTER_KEY
+  RAILS_MASTER_KEY: /copilot/ecsite/production/secrets/RAILS_MASTER_KEY
 #  GITHUB_TOKEN: GITHUB_TOKEN  # The key is the name of the environment variable, the value is the name of the SSM parameter.
 
 # You can override any of the values defined above by environment.
