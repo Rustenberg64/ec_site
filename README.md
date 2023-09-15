@@ -1,5 +1,5 @@
 ## カート機能を実装したECサイト
-URL: http://ecsit-publi-cxda4msa5le5-1632353347.ap-northeast-1.elb.amazonaws.com/
+URL: http://ecsit-Publi-1HLU4SPI6GVQS-1419937200.ap-northeast-1.elb.amazonaws.com
 
 ### 実装した機能
 - deviseを用いたユーザーの作成、ログイン、ログアウト
