@@ -13,6 +13,11 @@ http:
   path: '/'
   # You can specify a custom health check path. The default is "/".
   # healthcheck: '/'
+  healthcheck:
+    path: '/'
+    interval: 15s
+    timeout: 10s
+    grace_period: 180s
 
 # Configuration for your containers and service.
 image:
