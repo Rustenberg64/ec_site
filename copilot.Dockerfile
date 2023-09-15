@@ -8,6 +8,7 @@ WORKDIR /workspece
 
 USER rails
 ENV RAILS_ENV=production RAILS_SERVE_STATIC_FILES=true RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+RUN echo $RAILS_MASTER_KEY
 RUN bundle install
 # RUN bundle exec rails db:migrate
 # RUN bundle exec rails db:seed
