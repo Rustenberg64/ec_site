@@ -12,4 +12,5 @@ RUN bundle install
 # RUN bundle exec rails db:migrate
 # RUN bundle exec rails db:seed
 # RUN bundle exec rails db:setup && bundle exec rails assets:precompile
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["bundle", "exec", "rails", "s", "-p", "8080", "-b", "0.0.0.0"]
