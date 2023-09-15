@@ -2,7 +2,7 @@
 version: 0.2
 env:
   parameter-store:
-    RAILS_MASTER_KEY: /copilot/ecsite/production/secrets/RAILS_MASTER_KEY
+    RAILS_MASTER_KEY: "/copilot/ecsite/production/secrets/RAILS_MASTER_KEY"
 phases:
   install:
     runtime-versions:
