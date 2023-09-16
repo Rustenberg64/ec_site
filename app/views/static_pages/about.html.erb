@@ -1,19 +1,30 @@
 <div class=container>
-  <h2 class="text-center mb-4">About</h2>
-  <div class="row">
+  <h2 class="text-center mb-4">Admin</h2>
+  <div class="row mb-4">
     <h4>管理者ページ</h4>
     <div>
       商品の管理者ページは右からアクセスできます
       <%= link_to admin_products_path, admin_products_path%> <br>
       管理者ページのためログインが必要です。以下をお使いください。管理者アカウントの新規登録はできません。
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item border-0">email:</li>
-        <li class="list-group-item border-0">admin1@example.com</li>
-      </ul>
-      <ul class="list-group list-group-horizontal border-0">
-        <li class="list-group-item border-0">password:</li>
-        <li class="list-group-item border-0">password</li>
-      </ul>
-    <div>
+    </div>
   </div>
-</ul>
+
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Email:</th>
+            <th scope="col">admin1@example.com</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Password:</th>
+            <td>password</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
