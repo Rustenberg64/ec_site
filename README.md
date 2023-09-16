@@ -44,7 +44,7 @@ URL: http://ecsit-publi-zrs2dzi235mb-1027193348.ap-northeast-1.elb.amazonaws.com
   
   左はカルーセルになっています
   
-  ![大まかな図grpc](\\wsl.localhost\Ubuntu-22.04\home\yasuda\Docker_container\rails\myapp\READMEsrc\homepage.png)
+  ![homepage](READMEsrc\homepage.png)
 
 - ### 商品一覧ページ
   
@@ -56,13 +56,13 @@ URL: http://ecsit-publi-zrs2dzi235mb-1027193348.ap-northeast-1.elb.amazonaws.com
   
   商品の画像を選択することで商品の個別ページに移動します
   
-  ![](\\wsl.localhost\Ubuntu-22.04\home\yasuda\Docker_container\rails\myapp\READMEsrc\products.png)
+  ![products](READMEsrc\products.png)
 
 - ### 商品の個別ページ
   
   数量を選択して、"Add Cart"ボタンを押すことでカートに追加できます（ログインが必要）
   
-  ![大まかな図grpc](\\wsl.localhost\Ubuntu-22.04\home\yasuda\Docker_container\rails\myapp\READMEsrc\product.png)
+  ![product](READMEsrc\product.png)
 
 - ### カートページ
   
@@ -70,7 +70,7 @@ URL: http://ecsit-publi-zrs2dzi235mb-1027193348.ap-northeast-1.elb.amazonaws.com
   
   カートの商品の数量変更および削除ができます
   
-  ![](\\wsl.localhost\Ubuntu-22.04\home\yasuda\Docker_container\rails\myapp\READMEsrc\cart_items.png)
+  ![cart_items](READMEsrc\cart_items.png)
 
 - ### 管理者ページ
   
@@ -80,4 +80,4 @@ URL: http://ecsit-publi-zrs2dzi235mb-1027193348.ap-northeast-1.elb.amazonaws.com
   
   個々の商品の右にある"Edit"から商品の編集と削除ができます
   
-  ![](\\wsl.localhost\Ubuntu-22.04\home\yasuda\Docker_container\rails\myapp\READMEsrc\admin_products.png)
+  ![admin_products](READMEsrc\admin_products.png)
